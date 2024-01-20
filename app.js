@@ -146,7 +146,7 @@ function displayTimetable() {
 //   const today = "-01-2024";
 
   currentDateElement.innerText = `Today's Date: ${today}`;
-  currentDay.innerText = `Today is: ${getDay(today)}`;
+  currentDay.innerText = getDay(today);
 
   const isHolidayToday = isHoliday(today);
   if (isHolidayToday) {
