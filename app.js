@@ -1,6 +1,7 @@
 const currentDateElement = document.getElementById("currentDate");
 const currentDay = document.getElementById("currentDay");
 const timetableContainer = document.getElementById("timetableContainer");
+const blazerDay = document.getElementById('blazerDay');
 
 const subjectsPerDay = {
   day1: [
@@ -141,19 +142,38 @@ function getDay(date) {
   return day;
 }
 
+function isBlazerDay(date) {
+  const dateObj = getDateObject(date);
+  const dayOfWeek = dateObj.getDay();
+  console.log();
+  return dayOfWeek === 2 || dayOfWeek === 4;
+
+}
+
+
+
 function displayTimetable(date) {
-//   const today = "-01-2024";
 
   currentDateElement.innerText = `Date: ${date}`;
   currentDay.innerText = getDay(date);
 
-  if (isHoliday(date)) {
+  const isHolidayToday = isHoliday(date);
+  if (isHolidayToday) {
     timetableContainer.textContent = `Holiday: ${isHolidayToday}`;
     return;
   }
 
+  if(isBlazerDay(date)) {
+    blazerDay.style = 'display: block';
+  }
+  else{
+    blazerDay.style = 'display: none';
+  }
+
   const todayDay = getDayFromDate(date);
   const todaySubjects = subjectsPerDay[todayDay];
+
+  timetableContainer.textContent = "";
 
   if (todaySubjects) {
     const timetableTable = document.createElement("table");
@@ -182,7 +202,6 @@ function displayTimetable(date) {
 
 function openDatePicker() {
   const datePicker = document.getElementById("datePicker");
-
   const date = new Date().toISOString().split('T')[0];
   datePicker.value = date;
   const today = new Date().toLocaleDateString("en-GB").replace(/\//g, '-');
@@ -191,23 +210,9 @@ function openDatePicker() {
 
   datePicker.addEventListener("input", function() {
       const selectedDate = datePicker.value;
-      const parts = selectedDate.split("-");
-      const formattedDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
-      console.log(formattedDate);
-      displayTimetable(selectedDate);
+      const formattedDate = new Date(selectedDate).toLocaleDateString("en-GB").replace(/\//g, '-')
+      displayTimetable(formattedDate);
   });
 }
 
 openDatePicker()
-
-
-// function openDatePicker() {
-//   document.getElementById(datePicker).style.display = "block";
-//   flatpickr("#datePicker", {
-//       defaultDate: new Date(),
-//       onChange: function(selectedDates, dateStr) {
-//           console.log("Selected date:", dateStr);
-//           // You can update the "today" variable here or perform any other actions
-//       }
-//   });
-// }

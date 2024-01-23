@@ -5,24 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Timetable</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.css">
     <script src="app.js" defer></script>
 </head>
 <body>
     <section>
         <h1 id="currentDate"></h1>
         <h1 id="currentDay"></h1>
+        <p id="blazerDay"><span>BLAZER</span> Day</p>
         <div id="timetableContainer"></div>
         <div class="datePicker-container">
             <label for="datePicker">Change Date:</label>
-            <input type="date" id="datePicker" value=""  placeholder="dd-mm-yyyy">
+            <input type="date" id="datePicker" value="" placeholder="dd-mm-yyyy" min="2024-01-01" max="2024-1-31">
         </div>
-        <!-- <button onclick="openDatePicker()">Open Date Picker</button> -->
-
-        <!-- <input type="text" id="datePicker" style="display: none;">
-        <button onclick="openDatePicker()">Open Date Picker</button> -->
 
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"></script>  
 </body>
 </html>
