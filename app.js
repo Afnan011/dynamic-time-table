@@ -210,7 +210,8 @@ function openDatePicker() {
 
   datePicker.addEventListener("input", function() {
       const selectedDate = datePicker.value;
-      const formattedDate = new Date(selectedDate).toLocaleDateString("en-GB").replace(/\//g, '-')
+      let formattedDate = new Date(selectedDate).toLocaleDateString("en-GB").replace(/\//g, '-')
+      formattedDate = selectedDate == "" ? new Date().toLocaleDateString("en-GB").replace(/\//g, '-') : formattedDate;
       displayTimetable(formattedDate);
   });
 }
