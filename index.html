@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Timetable</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.css">
     <script src="app.js" defer></script>
 </head>
 <body>
@@ -12,6 +13,16 @@
         <h1 id="currentDate"></h1>
         <h1 id="currentDay"></h1>
         <div id="timetableContainer"></div>
+        <div class="datePicker-container">
+            <label for="datePicker">Change Date:</label>
+            <input type="date" id="datePicker" value=""  placeholder="dd-mm-yyyy">
+        </div>
+        <!-- <button onclick="openDatePicker()">Open Date Picker</button> -->
+
+        <!-- <input type="text" id="datePicker" style="display: none;">
+        <button onclick="openDatePicker()">Open Date Picker</button> -->
+
     </section>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr@4.6.9/dist/flatpickr.min.js"></script>  
 </body>
 </html>

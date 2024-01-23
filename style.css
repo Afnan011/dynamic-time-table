@@ -38,6 +38,56 @@ section{
     padding: 0.5rem 4rem;
 }
 
+.datePicker-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.datePicker-container label{
+    font-size: 1.3rem;
+    font-weight: 500;
+    
+}
+
+#datePicker{
+    padding: 0.5rem;
+    border: 1px solid #0000002a;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#datePicker:hover{
+    border: 1px solid #0000004a;
+}
+
+#datePicker:focus{
+    border: 1px solid #0000004a;
+    box-shadow: 0 0 0 2px #0000004a;
+}
+
+#datePicker::placeholder{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#datePicker::-webkit-calendar-picker-indicator{
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #0000004a;
+    cursor: pointer;
+}
+
+#datePicker::-webkit-calendar-picker-indicator:hover{
+    color: #0000007a;
+}
+
 
 
 @media only screen and (max-width: 768px){

@@ -141,20 +141,18 @@ function getDay(date) {
   return day;
 }
 
-function displayTimetable() {
-  const today = new Date().toLocaleDateString("en-GB").replace(/\//g, '-');
+function displayTimetable(date) {
 //   const today = "-01-2024";
 
-  currentDateElement.innerText = `Today's Date: ${today}`;
-  currentDay.innerText = getDay(today);
+  currentDateElement.innerText = `Date: ${date}`;
+  currentDay.innerText = getDay(date);
 
-  const isHolidayToday = isHoliday(today);
-  if (isHolidayToday) {
-    timetableContainer.textContent = `Today is a holiday: ${isHolidayToday}`;
+  if (isHoliday(date)) {
+    timetableContainer.textContent = `Holiday: ${isHolidayToday}`;
     return;
   }
 
-  const todayDay = getDayFromDate(today);
+  const todayDay = getDayFromDate(date);
   const todaySubjects = subjectsPerDay[todayDay];
 
   if (todaySubjects) {
@@ -179,4 +177,37 @@ function displayTimetable() {
   }
 }
 
-displayTimetable();
+
+
+
+function openDatePicker() {
+  const datePicker = document.getElementById("datePicker");
+
+  const date = new Date().toISOString().split('T')[0];
+  datePicker.value = date;
+  const today = new Date().toLocaleDateString("en-GB").replace(/\//g, '-');
+  displayTimetable(today);
+
+
+  datePicker.addEventListener("input", function() {
+      const selectedDate = datePicker.value;
+      const parts = selectedDate.split("-");
+      const formattedDate = `${parts[2]}-${parts[1]}-${parts[0]}`;
+      console.log(formattedDate);
+      displayTimetable(selectedDate);
+  });
+}
+
+openDatePicker()
+
+
+// function openDatePicker() {
+//   document.getElementById(datePicker).style.display = "block";
+//   flatpickr("#datePicker", {
+//       defaultDate: new Date(),
+//       onChange: function(selectedDates, dateStr) {
+//           console.log("Selected date:", dateStr);
+//           // You can update the "today" variable here or perform any other actions
+//       }
+//   });
+// }
