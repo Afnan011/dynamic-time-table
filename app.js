@@ -1,7 +1,9 @@
 const currentDateElement = document.getElementById("currentDate");
 const currentDay = document.getElementById("currentDay");
 const timetableContainer = document.getElementById("timetableContainer");
-const blazerDay = document.getElementById('blazerDay');
+const timeTableDay = document.getElementById("timeTableDay");
+
+// const blazerDay = document.getElementById('blazerDay');
 
 const subjectsPerDay = {
   day1: [
@@ -163,16 +165,17 @@ function displayTimetable(date) {
     return;
   }
 
-  if(isBlazerDay(date)) {
-    blazerDay.style = 'display: block';
-  }
-  else{
-    blazerDay.style = 'display: none';
-  }
+  // if(isBlazerDay(date)) {
+  //   blazerDay.style = 'display: block';
+  // }
+  // else{
+  //   blazerDay.style = 'display: none';
+  // }
 
   const todayDay = getDayFromDate(date);
   const todaySubjects = subjectsPerDay[todayDay];
 
+  timeTableDay.innerText = todayDay;
   timetableContainer.textContent = "";
 
   if (todaySubjects) {

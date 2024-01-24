@@ -13,10 +13,15 @@
 </head>
 <body>
     <section>
-        <h1 id="currentDate"></h1>
-        <h1 id="currentDay"></h1>
-        <p id="blazerDay"><span>BLAZER</span> Day</p>
-        <div id="timetableContainer"></div>
+        <div class="dateText">
+            <h1 id="currentDate"></h1>
+            <h1 id="currentDay"></h1>
+            <!-- <p id="blazerDay"><span>BLAZER</span> Day</p> -->
+        </div>
+        <div class="dateTable">
+            <p class="timeDay">Time Table: <span id="timeTableDay"></span></p>
+            <div id="timetableContainer"></div>
+        </div>
         <div class="datePicker-container">
             <label for="datePicker">Change Date:</label>
             <input type="date" id="datePicker" value="" placeholder="dd-mm-yyyy" min="2024-01-01" max="2024-1-31">
