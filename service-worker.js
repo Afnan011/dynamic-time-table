@@ -35,7 +35,7 @@
 
 /* eslint-env worker, serviceworker */
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
-'use strict';
+// 'use strict';
 
 var precacheConfig = [["app.js","a11db24ccb244a0606972c9d36499f13"],["img/android-chrome-192x192.png","15c3e70103fcb5c17a41f789d1d5ec54"],["img/android-chrome-512x512.png","d3cc9ea312b738d2dff526e7e58f462b"],["img/apple-touch-icon.png","a8b6b932838d947973aa8275faae92f8"],["img/bg.jpg","59c4465165456789349ba100fd23ba26"],["img/browserconfig.xml","f1681a769011f44a55b46e69ac1a8d01"],["img/favicon-16x16.png","6422a678eb015a5d71bc455097c587ce"],["img/favicon-32x32.png","ecc5bc186fc5c804e5200b8da146d8f7"],["img/favicon.ico","96cef272aede12f9289548318d428118"],["img/mstile-150x150.png","240886c8a83846c17336816a853dd189"],["img/new/android-chrome-192x192.png","f0f43b81061e025e06a157f46a43c58f"],["img/new/android-chrome-512x512.png","b259ddc8a6b1e913d569a8563ef055f9"],["img/new/apple-touch-icon.png","a509cef526ae5b8ce417db00b4e866fe"],["img/new/favicon-16x16.png","da9980dd062758f3fca604446b046ebc"],["img/new/favicon-32x32.png","ebfa32401cbbe39b94ae18cfe809968c"],["img/new/favicon.ico","5f5268d693183d958d8548ed7e0487cf"],["img/safari-pinned-tab.svg","169ab1b9e00f0ab960d4ccb0393f8332"],["img/site.webmanifest","a95fc3630a5979cacdc5bc9441538ecf"],["index.html","675cd9a5810c41e6f105c65a27125d14"],["package.json","9529c5be5a86367f01e5784c4b820a95"],["style.css","7eb96f89787bcef14b5ad86213a6bb70"]];
 var cacheName = 'sw-precache-v3-sw-precache-' + (self.registration ? self.registration.scope : '');
