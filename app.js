@@ -2,6 +2,8 @@ const currentDateElement = document.getElementById("currentDate");
 const currentDay = document.getElementById("currentDay");
 const timetableContainer = document.getElementById("timetableContainer");
 const timeTableDay = document.getElementById("timeTableDay");
+const timeDay = document.querySelector(".timeDay");
+
 
 // const blazerDay = document.getElementById('blazerDay');
 
@@ -162,7 +164,11 @@ function displayTimetable(date) {
   const isHolidayToday = isHoliday(date);
   if (isHolidayToday) {
     timetableContainer.textContent = `Holiday: ${isHolidayToday}`;
+    timeDay.style = 'display: none';  
     return;
+  }
+  else{
+    timeDay.style = 'display: block';
   }
 
   // if(isBlazerDay(date)) {
