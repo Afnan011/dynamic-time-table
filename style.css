@@ -23,6 +23,10 @@ section{
     gap: 0.5rem;
 }
 
+/* .className{
+    color: #1d1d22;
+} */
+
 .dateText{
     display: flex;
     justify-content: center;
